@@ -45,114 +45,294 @@ mysql_close($connection);
 				<table cellpadding="1" cellspacing="1" id="resultTable">
 				  <thead>
 					<tr>
-					  <th>First Name</th>
-					  <th>Last Name</th>
-					  <th>City</th>
-					  <th>State</th>
+					  <th>Name</th>
+					  <th>Vintage</th>
+					  <th>Region</th>
+					  <th>Country</th>
+					  <th>Wine Maker/Vineyard</th>
+					  <th>Supplier</th>
+					  <th>Price</th>
+					  <th>Life Expectancy</th>
+					  <th>Color</th>
+					  <th>Grape Type</th>
+					  <th>Percent Alcohol</th>
+					  <th>Notes</th>
+					  <th>Location</th>
+					  <th>Quantity</th>
 					</tr>
 				  </thead>
 				  <tbody>
 					<tr>
-						<td>Mannix</td>
-						<td>Bolton</td>
-						<td>Merizo</td>
-						<td>Michigan</td>
+						<td>Name</td>
+						<td>Vintage</td>
+						<td>Region</td>
+						<td>Country</td>
+						<td>Wine Maker/Vineyard</td>
+						<td>Supplier</td>
+						<td>Price</td>
+						<td>Life Expectancy</td>
+						<td>Color</td>
+						<td>Grape Type</td>
+						<td>Percent Alcohol</td>
+						<td>Notes</td>
+						<td>Location</td>
+						<td>Quantity</td>
 					</tr>
 					<tr>
-						<td>Suki</td>
-						<td>King</td>
-						<td>Fairmont</td>
-						<td>Oklahoma</td>
+						<td>Name</td>
+						<td>Vintage</td>
+						<td>Region</td>
+						<td>Country</td>
+						<td>Wine Maker/Vineyard</td>
+						<td>Supplier</td>
+						<td>Price</td>
+						<td>Life Expectancy</td>
+						<td>Color</td>
+						<td>Grape Type</td>
+						<td>Percent Alcohol</td>
+						<td>Notes</td>
+						<td>Location</td>
+						<td>Quantity</td>
 					</tr>
 					<tr>
-						<td>Shelby</td>
-						<td>English</td>
-						<td>Durham</td>
-						<td>Arkansas</td>
+						<td>Name</td>
+						<td>Vintage</td>
+						<td>Region</td>
+						<td>Country</td>
+						<td>Wine Maker/Vineyard</td>
+						<td>Supplier</td>
+						<td>Price</td>
+						<td>Life Expectancy</td>
+						<td>Color</td>
+						<td>Grape Type</td>
+						<td>Percent Alcohol</td>
+						<td>Notes</td>
+						<td>Location</td>
+						<td>Quantity</td>
 					</tr>
 					<tr>
-						<td>Portia</td>
-						<td>Burns</td>
-						<td>Princeton</td>
-						<td>Rhode Island</td>
+						<td>Name</td>
+						<td>Vintage</td>
+						<td>Region</td>
+						<td>Country</td>
+						<td>Wine Maker/Vineyard</td>
+						<td>Supplier</td>
+						<td>Price</td>
+						<td>Life Expectancy</td>
+						<td>Color</td>
+						<td>Grape Type</td>
+						<td>Percent Alcohol</td>
+						<td>Notes</td>
+						<td>Location</td>
+						<td>Quantity</td>
 					</tr>
 					<tr>
-						<td>Dacey</td>
-						<td>Young</td>
-						<td>Covina</td>
-						<td>South Carolina</td>
+						<td>Name</td>
+						<td>Vintage</td>
+						<td>Region</td>
+						<td>Country</td>
+						<td>Wine Maker/Vineyard</td>
+						<td>Supplier</td>
+						<td>Price</td>
+						<td>Life Expectancy</td>
+						<td>Color</td>
+						<td>Grape Type</td>
+						<td>Percent Alcohol</td>
+						<td>Notes</td>
+						<td>Location</td>
+						<td>Quantity</td>
 					</tr>
 					<tr>
-						<td>Clark</td>
-						<td>Reyes</td>
-						<td>Grand Rapids</td>
-						<td>New Jersey</td>
+						<td>Name</td>
+						<td>Vintage</td>
+						<td>Region</td>
+						<td>Country</td>
+						<td>Wine Maker/Vineyard</td>
+						<td>Supplier</td>
+						<td>Price</td>
+						<td>Life Expectancy</td>
+						<td>Color</td>
+						<td>Grape Type</td>
+						<td>Percent Alcohol</td>
+						<td>Notes</td>
+						<td>Location</td>
+						<td>Quantity</td>
 					</tr>
 					<tr>
-						<td>Maris</td>
-						<td>Decker</td>
-						<td>Sierra Madre</td>
-						<td>Georgia</td>
+						<td>Name</td>
+						<td>Vintage</td>
+						<td>Region</td>
+						<td>Country</td>
+						<td>Wine Maker/Vineyard</td>
+						<td>Supplier</td>
+						<td>Price</td>
+						<td>Life Expectancy</td>
+						<td>Color</td>
+						<td>Grape Type</td>
+						<td>Percent Alcohol</td>
+						<td>Notes</td>
+						<td>Location</td>
+						<td>Quantity</td>
 					</tr>
 					<tr>
-						<td>Yuli</td>
-						<td>Blackwell</td>
-						<td>Clearwater</td>
-						<td>Illinois</td>
+						<td>Name</td>
+						<td>Vintage</td>
+						<td>Region</td>
+						<td>Country</td>
+						<td>Wine Maker/Vineyard</td>
+						<td>Supplier</td>
+						<td>Price</td>
+						<td>Life Expectancy</td>
+						<td>Color</td>
+						<td>Grape Type</td>
+						<td>Percent Alcohol</td>
+						<td>Notes</td>
+						<td>Location</td>
+						<td>Quantity</td>
 					</tr>
 					<tr>
-						<td>Carly</td>
-						<td>Burks</td>
-						<td>Beaumont</td>
-						<td>Massachusetts</td>
+						<td>Name</td>
+						<td>Vintage</td>
+						<td>Region</td>
+						<td>Country</td>
+						<td>Wine Maker/Vineyard</td>
+						<td>Supplier</td>
+						<td>Price</td>
+						<td>Life Expectancy</td>
+						<td>Color</td>
+						<td>Grape Type</td>
+						<td>Percent Alcohol</td>
+						<td>Notes</td>
+						<td>Location</td>
+						<td>Quantity</td>
 					</tr>
 					<tr>
-						<td>Chloe</td>
-						<td>Christian</td>
-						<td>Gadsden</td>
-						<td>Virginia</td>
+						<td>Name</td>
+						<td>Vintage</td>
+						<td>Region</td>
+						<td>Country</td>
+						<td>Wine Maker/Vineyard</td>
+						<td>Supplier</td>
+						<td>Price</td>
+						<td>Life Expectancy</td>
+						<td>Color</td>
+						<td>Grape Type</td>
+						<td>Percent Alcohol</td>
+						<td>Notes</td>
+						<td>Location</td>
+						<td>Quantity</td>
 					</tr>
 					<tr>
-						<td>Trevor</td>
-						<td>Carrillo</td>
-						<td>West Bend</td>
-						<td>Connecticut</td>
+						<td>Name</td>
+						<td>Vintage</td>
+						<td>Region</td>
+						<td>Country</td>
+						<td>Wine Maker/Vineyard</td>
+						<td>Supplier</td>
+						<td>Price</td>
+						<td>Life Expectancy</td>
+						<td>Color</td>
+						<td>Grape Type</td>
+						<td>Percent Alcohol</td>
+						<td>Notes</td>
+						<td>Location</td>
+						<td>Quantity</td>
 					</tr>
 					<tr>
-						<td>Azalia</td>
-						<td>Gallegos</td>
-						<td>Plainfield</td>
-						<td>Michigan</td>
+						<td>Name</td>
+						<td>Vintage</td>
+						<td>Region</td>
+						<td>Country</td>
+						<td>Wine Maker/Vineyard</td>
+						<td>Supplier</td>
+						<td>Price</td>
+						<td>Life Expectancy</td>
+						<td>Color</td>
+						<td>Grape Type</td>
+						<td>Percent Alcohol</td>
+						<td>Notes</td>
+						<td>Location</td>
+						<td>Quantity</td>
 					</tr>
 					<tr>
-						<td>Jamal</td>
-						<td>Blair</td>
-						<td>Centennial</td>
-						<td>Indiana</td>
+						<td>Name</td>
+						<td>Vintage</td>
+						<td>Region</td>
+						<td>Country</td>
+						<td>Wine Maker/Vineyard</td>
+						<td>Supplier</td>
+						<td>Price</td>
+						<td>Life Expectancy</td>
+						<td>Color</td>
+						<td>Grape Type</td>
+						<td>Percent Alcohol</td>
+						<td>Notes</td>
+						<td>Location</td>
+						<td>Quantity</td>
 					</tr>
 					<tr>
-						<td>Sacha</td>
-						<td>Evans</td>
-						<td>Grand Island</td>
-						<td>Alabama</td>
+						<td>Name</td>
+						<td>Vintage</td>
+						<td>Region</td>
+						<td>Country</td>
+						<td>Wine Maker/Vineyard</td>
+						<td>Supplier</td>
+						<td>Price</td>
+						<td>Life Expectancy</td>
+						<td>Color</td>
+						<td>Grape Type</td>
+						<td>Percent Alcohol</td>
+						<td>Notes</td>
+						<td>Location</td>
+						<td>Quantity</td>
 					</tr>
 					<tr>
-						<td>Cain</td>
-						<td>Chapman</td>
-						<td>Ontario</td>
-						<td>Georgia</td>
+						<td>Name</td>
+						<td>Vintage</td>
+						<td>Region</td>
+						<td>Country</td>
+						<td>Wine Maker/Vineyard</td>
+						<td>Supplier</td>
+						<td>Price</td>
+						<td>Life Expectancy</td>
+						<td>Color</td>
+						<td>Grape Type</td>
+						<td>Percent Alcohol</td>
+						<td>Notes</td>
+						<td>Location</td>
+						<td>Quantity</td>
 					</tr>
 					<tr>
-						<td>Sigourney</td>
-						<td>Hendrix</td>
-						<td>Riverside</td>
-						<td>Florida</td>
+						<td>Name</td>
+						<td>Vintage</td>
+						<td>Region</td>
+						<td>Country</td>
+						<td>Wine Maker/Vineyard</td>
+						<td>Supplier</td>
+						<td>Price</td>
+						<td>Life Expectancy</td>
+						<td>Color</td>
+						<td>Grape Type</td>
+						<td>Percent Alcohol</td>
+						<td>Notes</td>
+						<td>Location</td>
+						<td>Quantity</td>
 					</tr>
 					<tr>
-						<td>Nigel</td>
-						<td>Boyle</td>
-						<td>Lake Forest</td>
-						<td>North Carolina</td>
+						<td>Name</td>
+						<td>Vintage</td>
+						<td>Region</td>
+						<td>Country</td>
+						<td>Wine Maker/Vineyard</td>
+						<td>Supplier</td>
+						<td>Price</td>
+						<td>Life Expectancy</td>
+						<td>Color</td>
+						<td>Grape Type</td>
+						<td>Percent Alcohol</td>
+						<td>Notes</td>
+						<td>Location</td>
+						<td>Quantity</td>
 					</tr>
 				  </tbody>
 				</table>

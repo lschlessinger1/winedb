@@ -34,6 +34,13 @@ div#footer {
 	z-index: 10;
 
 }
+input.newWineInput{
+	margin: 5px;
+	display:inline;
+}
+input#submit{
+	padding: 1px 6px;
+}
 a.navBarButton {
    border-top: 1px solid #96d1f8;
    background: #65a9d7;
@@ -96,7 +103,4 @@ td.hovered {
 	font-size: 20px;
 	font-family: Georgia, serif;
 	padding-left:5px;
-}
-.highlight {
-	background-color: yellow;
 }

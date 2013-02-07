@@ -41,7 +41,38 @@ mysql_close($connection);
 					</div>
 				</div>	
 				<div id="content">
-				
+					<form method="post" action="#"> <!-- make this form straight-->
+						<br />
+						<label>Name: </label><input id="wineYear" type="text" class="newWineInput"/> 
+						<br />
+						<label>Vintage: </label><input id="wineRegion" type="text" class="newWineInput"/> 
+						<br />
+						<label>Region: </label><input id="wineRegion" type="text" class="newWineInput"/> 
+						<br />
+						<label>Country: </label><input id="wineYear" type="text" class="newWineInput"/> 
+						<br />
+						<label>Wine Maker/Vineyard: </label><input id="wineYear" type="text" class="newWineInput"/> 
+						<br />
+						<label>Supplier: </label><input id="wineQuantity" type="text" class="newWineInput"/> 
+						<br />
+						<label>Price: </label><input id="wineYear" type="text" class="newWineInput"/> 
+						<br />
+						<label>Life Expectancy: </label><input id="wineYear" type="text" class="newWineInput"/> 
+						<br />
+						<label>Color: </label><input id="wineQuantity" type="text" class="newWineInput"/> 
+						<br />
+						<label>Grape Type: </label><input id="wineQuantity" type="text" class="newWineInput"/> 
+						<br />
+						<label>Percent Alcohol: </label><input id="wineYear" type="text" class="newWineInput"/> 
+						<br />
+						<label>Notes: </label><textarea id="wineYear" type="text" class="newWineInput"> </textarea>
+						<br />
+						<label>Location: </label><input id="wineYear" type="text" class="newWineInput"/> 
+						<br />
+						<label>Quantity: </label><input id="wineQuantity" type="text" class="newWineInput"/> 
+						<br />
+						<input id="submit" value="Create" type="submit"/> <br />
+					</form>
 				</div>
 				<div id="footer">
 					&copy <span id ="year"></span> Louis Schlessinger
