@@ -1,0 +1,1 @@
+//to get all wines and autocomplete in jQuery UI
