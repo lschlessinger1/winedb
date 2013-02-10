@@ -1,0 +1,131 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #0F4FA8;
+}
+div#wrapper {
+	min-height:100%;
+	position:relative;
+}
+div#header {
+	text-align:center;
+	color:black;
+	font-size: 24px;
+	background-color:#3BDA00;
+	margin: 0px;
+	display:none;
+	padding:10px;
+}
+div#content {
+	padding:10px;
+	padding-bottom:40px; /* Height of the footer element */
+	
+}
+div#footer {
+	text-align:center;
+	height:auto;
+	background-color:#FF6200;
+	width:100%;
+	color:white;
+	clear: both;
+	position: relative;
+	z-index: 10;
+}
+fieldset {
+	width: 80%;
+	margin: 50px auto;
+	background: #FFFFFF;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	-webkit-box-shadow: 10px 10px 20px rgba(0,0,0,0.65);
+}
+legend {
+	border: 1px solid black;
+	padding: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	font-size: 1.2em;
+	color: #FFF;
+	text-shadow: 3px 3px 3px #000000;
+	background: -webkit-gradient(radial, center center, 0, center center, 150, from(#669999
+), to(#000099));
+	-webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.5);
+}
+p.newWineInputPar{
+	margin: 15px;
+	padding-left: 20px;
+}
+input.newWineInput{
+	font-size:0.8em;
+}
+p#wineSubmit{
+	text-align:center;
+}
+input#submit{
+	padding: 1px 10px;
+}
+a.navBarButton {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 3.5px 7px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 16px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+a.navBarButton:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+a.navBarButton:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+table {
+	background-color: white;
+	-webkit-border-radius: 10px;
+	width: 100%;
+	padding: 10px;
+}
+th.sortable {
+	color: #666;
+	cursor: pointer;
+	text-decoration: underline;
+}
+th.sortable:hover { color: black; }
+th.sorted-asc, th.sorted-desc  { color: black; }
+
+td {
+	background-color: white;
+}
+td.odd {
+	background-color: #666;
+	color: white;
+}
+
+td.hovered {
+  background-color: lightblue;
+  color: #666;
+}
+#searchBar {
+	color:black;
+	font-size: 20px;
+	font-family: Georgia, serif;
+	padding-left:5px;
+}

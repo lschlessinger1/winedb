@@ -24,7 +24,8 @@ $(document).ready(function() {
 	var wine_maker_default = "enter a wine maker/vineyard...";
 	var supplier_default = "enter a supplier...";
 	var price_default = "enter a price...";
-	var life_expectancy_default = "enter a life expectancy...";
+	var lower_life_expectancy_default = "lower year";
+	var upper_life_expectancy_default = "upper year";
 	var color_default = "enter a color...";
 	var grape_type_default = "enter a grape type...";
 	var pct_alcohol_default = "enter a percent alcohol...";
@@ -107,16 +108,28 @@ $(document).ready(function() {
 		}
 	});
 	
-	$('#wineLifeExpectancy').attr('value', life_expectancy_default).focus(function() {
-		if($(this).val() == life_expectancy_default){
+	$('#wineLowerLifeExpectancy').attr('value', lower_life_expectancy_default).focus(function() {
+		if($(this).val() == lower_life_expectancy_default){
 			$(this).attr('value', '');
 			
 		}
 	}).blur(function() {
 		if($(this).val() == ''){
-			$(this).attr('value', life_expectancy_default);
+			$(this).attr('value', lower_life_expectancy_default);
 		}
 	});
+	
+	$('#wineUpperLifeExpectancy').attr('value', upper_life_expectancy_default).focus(function() {
+		if($(this).val() == upper_life_expectancy_default){
+			$(this).attr('value', '');
+			//Upper life expectancy should be > current year (see top, the var is year)
+		}
+	}).blur(function() {
+		if($(this).val() == ''){
+			$(this).attr('value', upper_life_expectancy_default);
+		}
+	});
+	
 	
 	$('#wineColor').attr('value', color_default).focus(function() {
 		if($(this).val() == color_default){
@@ -177,7 +190,9 @@ $(document).ready(function() {
 			console.log("Oops! Looks like you didn't enter a valid value for supplier.");
 		} else if ($('#winePrice').val() == price_default && isNaN($('#winePrice').val()) && $('#winePrice').val() === ''){
 			console.log("Oops! Looks like you didn't enter a valid value for price.");
-		} else if ($('#wineLifeExpectancy').val() == life_expectancy_default && isNaN($('#wineLifeExpectancy').val()) && $('#wineLifeExpectancy').val() === ''){
+		} else if ($('#wineLowerLifeExpectancy').val() == lower_life_expectancy_default && isNaN($('#wineLowerLifeExpectancy').val()) && $('#wineLowerLifeExpectancy').val() === ''){
+			console.log("Oops! Looks like you didn't enter a valid value for life expectancy.");
+		} else if($('#wineUpperLifeExpectancy').val() == upper_life_expectancy_default && isNaN($('#wineUpperLifeExpectancy').val()) && $('#wineUpperLifeExpectancy').val() === ''){
 			console.log("Oops! Looks like you didn't enter a valid value for life expectancy.");
 		} else if ($('#wineColor').val() == color_default && typeof($('#wineColor').val())!== 'string' && $('#wineColor').val() === ''){
 			console.log("Oops! Looks like you didn't enter a valid value for color.");
@@ -213,4 +228,5 @@ $(document).ready(function() {
 	$(':text').blur(function() {
 		$(this).css('background-color', 'white');
 	});
+	
 });

@@ -41,9 +41,24 @@ fieldset {
 	border-bottom-right-radius: 10px;
 	-webkit-box-shadow: 10px 10px 20px rgba(0,0,0,0.65);
 }
-p.newWineInput{
+legend {
+	border: 1px solid black;
+	padding: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	font-size: 1.2em;
+	color: #FFF;
+	text-shadow: 3px 3px 3px #000000;
+	background: -webkit-gradient(radial, center center, 0, center center, 150, from(#669999
+), to(#000099));
+	-webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.5);
+}
+p.newWineInputPar{
 	margin: 15px;
 	padding-left: 20px;
+}
+input.newWineInput{
+	font-size:0.8em;
 }
 p#wineSubmit{
 	text-align:center;

@@ -1,0 +1,7 @@
+this will just be a heatmap of the wine locations.
+much like lbic, i will use google's API with XML to see where in the world the wines were purchased and made
+
+other ideas:
+maybe filter the heatmap by country or something like it
+could calculate interesting stuff like where an individual buys the most wines
+if an individual has multiple homes, they could track where the specific bottles are in the world
