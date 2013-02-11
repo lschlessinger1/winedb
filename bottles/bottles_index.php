@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <?php
-/*
 $server = "localhost"; #temporary
 $username = "lschlessinger";
 $password = "louis";
@@ -14,330 +13,87 @@ $db = mysql_select_db("wine_db", $connection);
 if ($db == false) {
 	die("Yikes! Could not select that database! ".mysql_error());
 }
-$result = mysql_query('SELECT * FROM wines WHERE id = '.$_GET['id']) or die("Could not perform query... ".mysql_error());
-mysql_close($connection);
-*/
+$wines = mysql_query('SELECT * FROM wines') or die("Could not perform query... ".mysql_error());
+$locations = mysql_query('SELECT * FROM locations ORDER BY room') or die("Could not perform query... ".mysql_error());
 ?>
 <html>
 	<head>
 		<title>Wine Database</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="description" content="Home" />
-		<link type="text/css" rel="stylesheet" href="wines_style.css"/> 		
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../javascript/zebra_rows.js" type="text/javascript" charset="utf-8"></script>
+		<link type="text/css" rel="stylesheet" href="bottles_style.css"/> 		
+		</script>
 	</head>
 		<body>
-			<div id="header">
-			<p id="title">Wine Database</p>	
-			<script type="text/javascript" src ="../javascript/jquery.js"></script>
-			<script type="text/javascript" src ="../javascript/init.js"></script>
-				<div id="navBar">
-					<a href="../wine_db_home.php" class ="navBarButton">Home</a><!-- table of all wines, with crud functions-->
-					<a href="#" class ="navBarButton">Buy more stickers</a><!-- this can be an alert and an email-->
-					<a href="#" class ="navBarButton">Heatmap of wine locations</a>
-						<label for="search">Search</label>
-						<input id="wineName" type="wineSearch"></input><!--make this a drop down menu to say search by "_____" and then an input type text -->
+			<div id="wrapper">
+				<div id="header">
+				<p id="title">Wine Database</p>	
+					<script type="text/javascript" src ="../javascript/jquery.js"></script>
+					<script type="text/javascript" src ="../javascript/init.js"></script>
+					<div id="navBar">
+						<a href="../wine_db_home.php" class ="navBarButton">Home</a>
+						<a href="../wines/wines_index.php" class ="navBarButton">Wines</a>
+						<a href="../locations/locations_index.php" class ="navBarButton">Locations</a> <!--make drop downs for these-->
+						<a href="#" class ="navBarButton">Buy more stickers</a><!-- this can be an alert and an email-->
+						<a href="#" class ="navBarButton">Heatmap of wine locations</a>
+					<!--	<input id= "wineName" type="wineSearch"></input>	-->
+					</div>
+				</div>	
+				<div id="content">
+					<style type="text/css">
+						<!--fieldset  { display: none; }
+					 I should make this page ask the user if he or she wants to create new bottle(s) of an already existing wine, or new bottles of a new wine-->
+					</style>
+					<fieldset>			
+					<legend>Bottle Input</legend>
+						<form id="newWineForm" method="POST" action="wines/wines_create.php" > <!--i need to double check the submission--> 
+							
+							<p class="newWineInputPar"><label for="name">Name: </label><input id="wineName" type="text" class="newWineInput" name="new_name"/></p> <!--this name should point to a id of the wines table and therefore obtaining wine_id of bottles table-->
+							
+							<p class="newWineInputPar"><label for="vintage">Vintage: </label><input id="wineVintage" type="text" class="newWineInput"name="new_vintage"/></p>
+							
+							<p class="newWineInputPar"><label for="region">Region: </label><input id="wineRegion" type="text" class="newWineInput" name="new_region"/></p> 
+							
+							<p class="newWineInputPar"><label for="country">Country: </label><input id="wineCountry" type="text" class="newWineInput" name="new_country"/></p> 
+							
+							<p class="newWineInputPar"><label for="wineMaker/Vineyard">Wine Maker/Vineyard: </label><input id="wineMaker" type="text" class="newWineInput"name="new_wine_maker_or_vineyard"/></p> 
+							
+							<p class="newWineInputPar"><label for="supplier">Supplier: </label><input id="wineSupplier" type="text" class="newWineInput" name="new_supplier"/></p> 
+							
+							<p class="newWineInputPar"><label for="price">Price: </label><input id="winePrice" type="text" class="newWineInput"name="new_price"/></p> 
+							
+							<p class="newWineInputPar"><label for="lifeExpectancy">Life Expectancy: </label><input id="wineLowerLifeExpectancy" type="text" class="newWineInput" name="new_lower_life_expectancy"/> to 
+							<input id="wineUpperLifeExpectancy" type="text" class="newWineInput" name="new_upper_life_expectancy"/></p> <!-- how should i do this? -->
+							
+							<p class="newWineInputPar"><label for="color">Color: </label><input id="wineColor" type="text" class="newWineInput" name="new_color"/></p> 
+							
+							<p class="newWineInputPar"><label for="grapeType">Grape Type: </label><input id="wineGrapeType" type="text" class="newWineInput" name="new_grape_type"/></p> <!---should i make this into select element with options? -->
+							
+							<p class="newWineInputPar"><label for="percentAlcohol">Percent Alcohol: </label><input id="winePercentAlcohol" type="text" class="newWineInput" name="new_percent_alcohol"/></p> 
+							
+							<p class="newWineInputPar"><label for="notes">Wine Notes: </label><textarea id="wineNotes" type="text" class="newWineInput" name="new_notes"> </textarea></p>
+							
+							<p class="newWineInputPar"><label for="location">Location: </label>
+							<select id="wineLocation" type="text" name="new_location_id"> 
+							<?php
+							while($row = mysql_fetch_array($locations)){
+								print("<option value=".$row['id'].">".$row[room]." ".$row['container_number']."</option>");
+							}
+							?>
+							</select></p>
+							<p class="newWineInputPar"><label for="isOpen?">Is open?: </label> <!--default value should be false-->
+							<select id="wineIsOpen" type="text" > 
+								<option>closed</option>
+								<option>open</option>
+							</select></p>
+							<p class="newWineInputPar"><label for="quantity">Quantity: </label><input id="wineQuantity" type="text" class="newWineInput"/></p> <!--make algorithm to make many instances of bottles of same wine-->
+							<p id="wineSubmit"><input id="submit" value="Create" type="submit"/></p>
+						</form>
+					</fieldset>
 				</div>
-			</div>	
-			<div id="content">
-				<table cellpadding="1" cellspacing="1" id="resultTable">
-				  <thead>
-					<tr>
-					  <th>Name</th>
-					  <th>Vintage</th>
-					  <th>Region</th>
-					  <th>Country</th>
-					  <th>Wine Maker/Vineyard</th>
-					  <th>Supplier</th>
-					  <th>Price</th>
-					  <th>Life Expectancy</th>
-					  <th>Color</th>
-					  <th>Grape Type</th>
-					  <th>Percent Alcohol</th>
-					  <th>Notes</th>
-					  <th>Location</th>
-					  <th>Quantity</th>
-					</tr>
-				  </thead>
-				  <tbody>
-					<tr>
-						<td>Name</td>
-						<td>Vintage</td>
-						<td>Region</td>
-						<td>Country</td>
-						<td>Wine Maker/Vineyard</td>
-						<td>Supplier</td>
-						<td>Price</td>
-						<td>Life Expectancy</td>
-						<td>Color</td>
-						<td>Grape Type</td>
-						<td>Percent Alcohol</td>
-						<td>Notes</td>
-						<td>Location</td>
-						<td>Quantity</td>
-					</tr>
-					<tr>
-						<td>Name</td>
-						<td>Vintage</td>
-						<td>Region</td>
-						<td>Country</td>
-						<td>Wine Maker/Vineyard</td>
-						<td>Supplier</td>
-						<td>Price</td>
-						<td>Life Expectancy</td>
-						<td>Color</td>
-						<td>Grape Type</td>
-						<td>Percent Alcohol</td>
-						<td>Notes</td>
-						<td>Location</td>
-						<td>Quantity</td>
-					</tr>
-					<tr>
-						<td>Name</td>
-						<td>Vintage</td>
-						<td>Region</td>
-						<td>Country</td>
-						<td>Wine Maker/Vineyard</td>
-						<td>Supplier</td>
-						<td>Price</td>
-						<td>Life Expectancy</td>
-						<td>Color</td>
-						<td>Grape Type</td>
-						<td>Percent Alcohol</td>
-						<td>Notes</td>
-						<td>Location</td>
-						<td>Quantity</td>
-					</tr>
-					<tr>
-						<td>Name</td>
-						<td>Vintage</td>
-						<td>Region</td>
-						<td>Country</td>
-						<td>Wine Maker/Vineyard</td>
-						<td>Supplier</td>
-						<td>Price</td>
-						<td>Life Expectancy</td>
-						<td>Color</td>
-						<td>Grape Type</td>
-						<td>Percent Alcohol</td>
-						<td>Notes</td>
-						<td>Location</td>
-						<td>Quantity</td>
-					</tr>
-					<tr>
-						<td>Name</td>
-						<td>Vintage</td>
-						<td>Region</td>
-						<td>Country</td>
-						<td>Wine Maker/Vineyard</td>
-						<td>Supplier</td>
-						<td>Price</td>
-						<td>Life Expectancy</td>
-						<td>Color</td>
-						<td>Grape Type</td>
-						<td>Percent Alcohol</td>
-						<td>Notes</td>
-						<td>Location</td>
-						<td>Quantity</td>
-					</tr>
-					<tr>
-						<td>Name</td>
-						<td>Vintage</td>
-						<td>Region</td>
-						<td>Country</td>
-						<td>Wine Maker/Vineyard</td>
-						<td>Supplier</td>
-						<td>Price</td>
-						<td>Life Expectancy</td>
-						<td>Color</td>
-						<td>Grape Type</td>
-						<td>Percent Alcohol</td>
-						<td>Notes</td>
-						<td>Location</td>
-						<td>Quantity</td>
-					</tr>
-					<tr>
-						<td>Name</td>
-						<td>Vintage</td>
-						<td>Region</td>
-						<td>Country</td>
-						<td>Wine Maker/Vineyard</td>
-						<td>Supplier</td>
-						<td>Price</td>
-						<td>Life Expectancy</td>
-						<td>Color</td>
-						<td>Grape Type</td>
-						<td>Percent Alcohol</td>
-						<td>Notes</td>
-						<td>Location</td>
-						<td>Quantity</td>
-					</tr>
-					<tr>
-						<td>Name</td>
-						<td>Vintage</td>
-						<td>Region</td>
-						<td>Country</td>
-						<td>Wine Maker/Vineyard</td>
-						<td>Supplier</td>
-						<td>Price</td>
-						<td>Life Expectancy</td>
-						<td>Color</td>
-						<td>Grape Type</td>
-						<td>Percent Alcohol</td>
-						<td>Notes</td>
-						<td>Location</td>
-						<td>Quantity</td>
-					</tr>
-					<tr>
-						<td>Name</td>
-						<td>Vintage</td>
-						<td>Region</td>
-						<td>Country</td>
-						<td>Wine Maker/Vineyard</td>
-						<td>Supplier</td>
-						<td>Price</td>
-						<td>Life Expectancy</td>
-						<td>Color</td>
-						<td>Grape Type</td>
-						<td>Percent Alcohol</td>
-						<td>Notes</td>
-						<td>Location</td>
-						<td>Quantity</td>
-					</tr>
-					<tr>
-						<td>Name</td>
-						<td>Vintage</td>
-						<td>Region</td>
-						<td>Country</td>
-						<td>Wine Maker/Vineyard</td>
-						<td>Supplier</td>
-						<td>Price</td>
-						<td>Life Expectancy</td>
-						<td>Color</td>
-						<td>Grape Type</td>
-						<td>Percent Alcohol</td>
-						<td>Notes</td>
-						<td>Location</td>
-						<td>Quantity</td>
-					</tr>
-					<tr>
-						<td>Name</td>
-						<td>Vintage</td>
-						<td>Region</td>
-						<td>Country</td>
-						<td>Wine Maker/Vineyard</td>
-						<td>Supplier</td>
-						<td>Price</td>
-						<td>Life Expectancy</td>
-						<td>Color</td>
-						<td>Grape Type</td>
-						<td>Percent Alcohol</td>
-						<td>Notes</td>
-						<td>Location</td>
-						<td>Quantity</td>
-					</tr>
-					<tr>
-						<td>Name</td>
-						<td>Vintage</td>
-						<td>Region</td>
-						<td>Country</td>
-						<td>Wine Maker/Vineyard</td>
-						<td>Supplier</td>
-						<td>Price</td>
-						<td>Life Expectancy</td>
-						<td>Color</td>
-						<td>Grape Type</td>
-						<td>Percent Alcohol</td>
-						<td>Notes</td>
-						<td>Location</td>
-						<td>Quantity</td>
-					</tr>
-					<tr>
-						<td>Name</td>
-						<td>Vintage</td>
-						<td>Region</td>
-						<td>Country</td>
-						<td>Wine Maker/Vineyard</td>
-						<td>Supplier</td>
-						<td>Price</td>
-						<td>Life Expectancy</td>
-						<td>Color</td>
-						<td>Grape Type</td>
-						<td>Percent Alcohol</td>
-						<td>Notes</td>
-						<td>Location</td>
-						<td>Quantity</td>
-					</tr>
-					<tr>
-						<td>Name</td>
-						<td>Vintage</td>
-						<td>Region</td>
-						<td>Country</td>
-						<td>Wine Maker/Vineyard</td>
-						<td>Supplier</td>
-						<td>Price</td>
-						<td>Life Expectancy</td>
-						<td>Color</td>
-						<td>Grape Type</td>
-						<td>Percent Alcohol</td>
-						<td>Notes</td>
-						<td>Location</td>
-						<td>Quantity</td>
-					</tr>
-					<tr>
-						<td>Name</td>
-						<td>Vintage</td>
-						<td>Region</td>
-						<td>Country</td>
-						<td>Wine Maker/Vineyard</td>
-						<td>Supplier</td>
-						<td>Price</td>
-						<td>Life Expectancy</td>
-						<td>Color</td>
-						<td>Grape Type</td>
-						<td>Percent Alcohol</td>
-						<td>Notes</td>
-						<td>Location</td>
-						<td>Quantity</td>
-					</tr>
-					<tr>
-						<td>Name</td>
-						<td>Vintage</td>
-						<td>Region</td>
-						<td>Country</td>
-						<td>Wine Maker/Vineyard</td>
-						<td>Supplier</td>
-						<td>Price</td>
-						<td>Life Expectancy</td>
-						<td>Color</td>
-						<td>Grape Type</td>
-						<td>Percent Alcohol</td>
-						<td>Notes</td>
-						<td>Location</td>
-						<td>Quantity</td>
-					</tr>
-					<tr>
-						<td>Name</td>
-						<td>Vintage</td>
-						<td>Region</td>
-						<td>Country</td>
-						<td>Wine Maker/Vineyard</td>
-						<td>Supplier</td>
-						<td>Price</td>
-						<td>Life Expectancy</td>
-						<td>Color</td>
-						<td>Grape Type</td>
-						<td>Percent Alcohol</td>
-						<td>Notes</td>
-						<td>Location</td>
-						<td>Quantity</td>
-					</tr>
-				  </tbody>
-				</table>
-			</div>
-			<div id="footer">
-				&copy <span id ="year"></span> Louis Schlessinger
+				<div id="footer">
+					&copy <span id ="year"></span> Louis Schlessinger
+				</div>
 			</div>
 		</body>
 </html>

@@ -34,7 +34,7 @@ $result = mysql_query('SELECT * FROM locations') or die("Could not perform query
 			<script type="text/javascript" src ="../javascript/init.js"></script>
 				<div id="navBar">
 					<a href="../wine_db_home.php" class ="navBarButton">Home</a><!-- table of all wines, with crud functions-->
-					<a href="../wines/wines_index.php" class ="navBarButton">Locations</a> <!--make drop downs for these-->
+					<a href="../wines/wines_index.php" class ="navBarButton">Wines</a> <!--make drop downs for these-->
 					<a href="../bottles/bottles_index.php" class ="navBarButton">Bottles</a>
 					<a href="#" class ="navBarButton">Buy more stickers</a><!-- this can be an alert and an email-->
 					<a href="#" class ="navBarButton">Heatmap of wine locations</a>

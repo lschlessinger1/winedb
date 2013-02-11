@@ -17,6 +17,7 @@ if ($db == false) {
 $wines = mysql_query('SELECT * FROM wines') or die("Could not perform query... ".mysql_error());
 $bottles = mysql_query('SELECT * FROM bottles') or die("Could not perform query... ".mysql_error());
 $locations = mysql_query('SELECT * FROM locations') or die("Could not perform query... ".mysql_error());
+$result = mysql_query('SELECT ') or die("Could not perform query... ".mysql_error());
 
 ?>
 <html>
@@ -62,7 +63,6 @@ $locations = mysql_query('SELECT * FROM locations') or die("Could not perform qu
 				  <th>Grape Type</th>
 				  <th>Percent Alcohol</th>
 				  <th>Notes</th>
-				  <th>Location</th>
 				  <th>Quantity</th> ');
 			print ("<th>Edit</th>");
 			print ("<th>Delete</th>");
@@ -115,6 +115,9 @@ $locations = mysql_query('SELECT * FROM locations') or die("Could not perform qu
 				print ("</td>");
 				print ("<td >");
 				print ($row['notes']);
+				print ("</td>");
+				print ("<td >");
+				print ('quantity');//= how many bottles with this wine_id
 				print ("</td>");
 				print ("<td>");
 				print ("<a href='wines_edit.php?id=".$row['id']."' class='editButton'>");
