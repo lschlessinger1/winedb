@@ -1,8 +1,10 @@
 <?php
-print('	<div id="content">
-		<fieldset>			
+print('	<div id="content" class="ui-widget-content ui-corner-all">
+		<a href="#" id="button1" class="ui-state-default ui-corner-all">input a new wine and bottle(s)</a> <br />
+		<a href="#" id="button2" >update quanity of a wine</a>//make this, just run the bottles_create quantity times
+		<fieldset id="newBottleFieldset">			
 		<legend>Bottle Input</legend>
-			<form id="newBottleForm" method="POST" action="bottle/bottless_create.php" > 
+			<form id="newBottleForm" method="POST" action="bottles_create.php" > 
 				
 				<p class="newWineInputPar"><label for="name">Name: </label><input id="wineName" type="text" class="newWineInput" name="new_name"/></p> <!--this name should point to a id of the wines table and therefore obtaining wine_id of bottles table-->
 				
@@ -39,7 +41,7 @@ print('	<div id="content">
 				print('	
 				</select></p>
 				<p class="newWineInputPar"><label for="isOpen?">Is open?: </label> <!--default value should be false-->
-				<select id="wineIsOpen" type="text" > 
+				<select id="wineIsOpen" type="text" name="new_is_open"> 
 					<option>closed</option>
 					<option>open</option>
 				</select></p>
@@ -49,3 +51,9 @@ print('	<div id="content">
 		</fieldset>
 	</div>');
 ?>
+<!--
+This is the new bottle w/ new wine
+how should i do this?
+	- create wine script then (create bottle script) quantity times?
+	- 
+-->

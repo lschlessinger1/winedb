@@ -221,12 +221,16 @@ $(document).ready(function() {
 			  break;
 		}*/
 	});
-	
+	$(function() {
+		$('#wineId').autocomplete({			
+			source: "autocomplete.php",
+			minLength: 2
+		}); //autocompletion
+	});
 	$(':text').focusin(function() {
 		$(this).css('background-color', '#EDEDED');
 	});
 	$(':text').blur(function() {
 		$(this).css('background-color', 'white');
 	});
-	
 });

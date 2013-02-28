@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 include ('../../get_db.php');
-$result = mysql_query('SELECT * FROM locations WHERE id = '.$_GET['id']) or die("Could not perform query... ".mysql_error());
+$loc = mysql_query('SELECT * FROM locations WHERE id = '.$_GET['id']) or die("Could not perform query... ".mysql_error());
 ?>
 <html>
 	<head>
@@ -29,7 +29,7 @@ $result = mysql_query('SELECT * FROM locations WHERE id = '.$_GET['id']) or die(
 	print ("</tr>");
 	print ("</thead>");
 	print ("<tbody>");
-	while ($row = mysql_fetch_array($result)) {
+	while ($row = mysql_fetch_array($loc)) {
 		print ("<tr>");
 		print ("<td>");
 		print ("<a href='locations_show.php?id=".$row['id']."' class='showNameAnchor'>");

@@ -1,8 +1,8 @@
 <?php
 print('	
 		<fieldset>			
-		<legend>Bottle Input</legend>
-			<form id="newWineForm" method="POST" action="wines/wines_create.php" > <!--i need to double check the submission--> 
+		<legend>Wine Input</legend>
+			<form id="newWineForm" method="POST" action="wines_create.php" > <!--I need to double check the submission--> 
 				
 				<p class="newWineInputPar"><label for="name">Name: </label><input id="wineName" type="text" class="newWineInput" name="new_name"/></p> <!--this name should point to a id of the wines table and therefore obtaining wine_id of bottles table-->
 				
@@ -16,14 +16,14 @@ print('
 				
 				<p class="newWineInputPar"><label for="supplier">Supplier: </label><input id="wineSupplier" type="text" class="newWineInput" name="new_supplier"/></p> 
 				
-				<p class="newWineInputPar"><label for="price">Price: </label><input id="winePrice" type="text" class="newWineInput"name="new_price"/></p> 
+				<p class="newWineInputPar"><label for="price">Price: </label> per bottle<input id="winePrice" type="text" class="newWineInput"name="new_price"/></p> 
 				
 				<p class="newWineInputPar"><label for="lifeExpectancy">Life Expectancy: </label><input id="wineLowerLifeExpectancy" type="text" class="newWineInput" name="new_lower_life_expectancy"/> to 
-				<input id="wineUpperLifeExpectancy" type="text" class="newWineInput" name="new_upper_life_expectancy"/></p> <!-- how should i do this? -->
+				<input id="wineUpperLifeExpectancy" type="text" class="newWineInput" name="new_upper_life_expectancy"/></p> <!-- how should I do this? -->
 				
 				<p class="newWineInputPar"><label for="color">Color: </label><input id="wineColor" type="text" class="newWineInput" name="new_color"/></p> 
 				
-				<p class="newWineInputPar"><label for="grapeType">Grape Type: </label><input id="wineGrapeType" type="text" class="newWineInput" name="new_grape_type"/></p> <!---should i make this into select element with options? -->
+				<p class="newWineInputPar"><label for="grapeType">Grape Type: </label><input id="wineGrapeType" type="text" class="newWineInput" name="new_grape_type"/></p> <!---should I make this into select element with options? -->
 				
 				<p class="newWineInputPar"><label for="percentAlcohol">Percent Alcohol: </label><input id="winePercentAlcohol" type="text" class="newWineInput" name="new_percent_alcohol"/></p> 
 				

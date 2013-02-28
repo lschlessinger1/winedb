@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <?php
 include ('../../get_db.php');
-$wines = mysql_query('SELECT * FROM wines') or die("Could not perform query... ".mysql_error());
+
+$wine = mysql_query('SELECT * FROM wines WHERE id = '.$_GET['id'])or die("Could not perform query... ".mysql_error());
 ?>
 <html>
 	<head>
@@ -11,11 +12,15 @@ $wines = mysql_query('SELECT * FROM wines') or die("Could not perform query... "
 		<link type="text/css" rel="stylesheet" href="wines_style.css"/> 		
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../javascript/zebra_rows.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../javascript/jquery.js"></script>
+		<script type="text/javascript" src="../javascript/init.js"></script>
 	</head>
 		<body>
-			<?php include('../../wines_header.php'); ?>
+			
 			<div id="content">
+			<?php include('../../wines_header.php'); ?>
 			<?php
+			echo "<br />";
 			print ("<table cellpadding='1' cellspacing='1' id='resultTable'>");
 			print ("<thead>");
 			print ("<tr>");
@@ -27,7 +32,6 @@ $wines = mysql_query('SELECT * FROM wines') or die("Could not perform query... "
 				  <th>Supplier</th>
 				  <th>Price</th>
 				  <th>Lower Life Expectancy</th>
-				   - 
 				  <th>Upper Life Expectancy</th>
 				  <th>Color</th>
 				  <th>Grape Type</th>
@@ -40,7 +44,7 @@ $wines = mysql_query('SELECT * FROM wines') or die("Could not perform query... "
 			print ("</tr>");
 			print ("</thead>");
 			print ("<tbody>");
-			while ($row = mysql_fetch_array($wines)) {
+			while ($row = mysql_fetch_array($wine)) {
 				print ("<tr>");
 				print ("<td>");
 				print ("<a href='wines_show.php?id=".$row['id']."' class='showNameAnchor'>");
