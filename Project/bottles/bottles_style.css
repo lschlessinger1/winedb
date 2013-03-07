@@ -108,9 +108,30 @@ th.sortable {
 	cursor: pointer;
 	text-decoration: underline;
 }
-th.sortable:hover { color: black; }
-th.sorted-asc, th.sorted-desc  { color: black; }
+a.bottleAnchor:link    { 
+	color:red; 
+	text-decoration:none; 
+	padding-left: 25px;
+}
+a.bottleAnchor:visited { 
+	color:red; 
+	text-decoration:none; 
+}
+a.bottleAnchor:hover   { 
+	color:green; 
+	text-decoration:underline; 
+}
+a.bottleAnchor:active  { 
+	color:red;
+	text-decoration:none; 
+}
 
+th.sortable:hover { 
+	color: black; 
+}
+th.sorted-asc, th.sorted-desc  { 
+	color: black; 
+}
 td {
 	background-color: white;
 }

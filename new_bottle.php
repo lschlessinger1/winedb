@@ -1,7 +1,5 @@
 <?php
 print('	<div id="content" class="ui-widget-content ui-corner-all">
-		<a href="#" id="button1" class="ui-state-default ui-corner-all">input a new wine and bottle(s)</a> <br />
-		<a href="#" id="button2" >update quanity of a wine</a>//make this, just run the bottles_create quantity times
 		<fieldset id="newBottleFieldset">			
 		<legend>Bottle Input</legend>
 			<form id="newBottleForm" method="POST" action="bottles_create.php" > 
@@ -21,11 +19,11 @@ print('	<div id="content" class="ui-widget-content ui-corner-all">
 				<p class="newWineInputPar"><label for="price">Price: </label><input id="winePrice" type="text" class="newWineInput"name="new_price"/></p> 
 				
 				<p class="newWineInputPar"><label for="lifeExpectancy">Life Expectancy: </label><input id="wineLowerLifeExpectancy" type="text" class="newWineInput" name="new_lower_life_expectancy"/> to 
-				<input id="wineUpperLifeExpectancy" type="text" class="newWineInput" name="new_upper_life_expectancy"/></p> <!-- how should i do this? -->
+				<input id="wineUpperLifeExpectancy" type="text" class="newWineInput" name="new_upper_life_expectancy"/></p> <!-- how should I do this? -->
 				
 				<p class="newWineInputPar"><label for="color">Color: </label><input id="wineColor" type="text" class="newWineInput" name="new_color"/></p> 
 				
-				<p class="newWineInputPar"><label for="grapeType">Grape Type: </label><input id="wineGrapeType" type="text" class="newWineInput" name="new_grape_type"/></p> <!---should i make this into select element with options? -->
+				<p class="newWineInputPar"><label for="grapeType">Grape Type: </label><input id="wineGrapeType" type="text" class="newWineInput" name="new_grape_type"/></p> <!---should I make this into select element with options? -->
 				
 				<p class="newWineInputPar"><label for="percentAlcohol">Percent Alcohol: </label><input id="winePercentAlcohol" type="text" class="newWineInput" name="new_percent_alcohol"/></p> 
 				

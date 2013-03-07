@@ -2,8 +2,6 @@
 include ('../../get_db.php');
 $locations = mysql_query('SELECT * FROM locations ORDER BY room') or die ("Could not perform query... ".mysql_error());
 print('	<div id="content" class="ui-widget-content ui-corner-all">
-		<a href="#" id="button1" type="op1" class="ui-state-default ui-corner-all">input a new wine and bottle(s)</a> <br />
-		<a href="#" id="button" type="op1" class="ui-state-default ui-corner-all">update quanity of a wine</a>//make this, just run the bottles_create quantity times
 		<fieldset id="newBottleFieldset">			
 		<legend>Bottle Input</legend>
 			<form id="newBottleForm" method="POST" action="bottles_update_quantity.php" > 

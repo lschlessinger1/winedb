@@ -4,7 +4,7 @@ print('	<div id="header">
 			<div id="navBar">
 				<a href="../wine_db_home.php" class ="navBarButton">Home</a>
 				<a href="../wines/wines_index.php" class ="navBarButton">Wines</a> 
-				<a href="../bottles/bottles_index.php" class ="navBarButton">Bottles</a>
+				<a href="../bottles/bottles_index.php?page=home" class ="navBarButton">Bottles</a>
 				<a href="#" class ="navBarButton">Buy more stickers</a>
 				<a href="#" class ="navBarButton">Heatmap of wine locations</a>
 				<label for="search">Search</label>
