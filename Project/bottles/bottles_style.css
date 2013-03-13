@@ -150,3 +150,19 @@ td.hovered {
 	font-family: Georgia, serif;
 	padding-left:5px;
 }
+ul.ui-autocomplete {
+    background: none repeat scroll 0 0 #DADADA;
+    cursor: pointer;
+    display: block;
+    list-style-type: none;
+    max-width: 200px;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+}
+ul.ui-autocomplete li.ui-menu-item {
+    padding:3px 5px;
+}
+ul.ui-autocomplete li.ui-menu-item:hover,
+ul.ui-autocomplete li.ui-state-hover:hover{
+    background:#666;

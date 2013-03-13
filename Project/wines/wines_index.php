@@ -2,8 +2,22 @@
 <?php
 include ('../../get_db.php');
 $wines = mysql_query('SELECT * FROM wines') or die("Could not perform query... ".mysql_error());
-$bottles = mysql_query('SELECT * FROM bottles') or die("Could not perform query... ".mysql_error());
-$locations = mysql_query('SELECT * FROM locations') or die("Could not perform query... ".mysql_error());
+
+function calcQuantity($wine_id) {
+	$bottles = mysql_query('SELECT bottles.id, wines.id
+	FROM wines
+	LEFT JOIN bottles
+	ON wines.id = bottles.wine_id 
+	') or die("Could not perform query... ".mysql_error());
+	
+	$quantity = 0;
+    while ($row = mysql_fetch_array($bottles)) {
+		if($row['id'] == $wine_id){
+			$quantity++;
+		}
+	}
+	return $quantity;
+}
 ?>
 <html>
 	<head>
@@ -45,6 +59,7 @@ $locations = mysql_query('SELECT * FROM locations') or die("Could not perform qu
 			print ("</thead>");
 			print ("<tbody>");
 			while ($row = mysql_fetch_array($wines)) {
+				$wine_id = $row['id'];
 				print ("<tr>");
 				print ("<td>");
 				print ("<a href='wines_show.php?id=".$row['id']."' class='showNameAnchor'>");
@@ -91,8 +106,8 @@ $locations = mysql_query('SELECT * FROM locations') or die("Could not perform qu
 				print ("<td >");
 				print ($row['notes']);
 				print ("</td>");
-				print ("<td >");
-				print ('quantity');//= how many bottles with this wine_id
+				print ("<td>");
+				print (calcQuantity($wine_id));
 				print ("</td>");
 				print ("<td>");
 				print ("<a href='wines_edit.php?id=".$row['id']."' class='editButton'>");

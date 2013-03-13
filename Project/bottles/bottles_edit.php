@@ -48,7 +48,29 @@ echo 	'<style type="text/css">
 		?>
 			<ul>
 				<li>
-					is_open?: <input id="is_open" name="is_open" value="<?php echo $bottle['is_open']; ?>"/> 
+					<?php if($bottle['is_open'] == 0){
+						echo 'closed';
+					} else if ($bottle['is_open'] == 1){
+						echo 'open';
+					}?>
+					<input type="radio" id="is_open" name="is_open" value="<?php 
+					if($bottle['is_open'] == 0){
+						echo 'closed';
+					} else if ($bottle['is_open'] == 1){
+						echo 'open';
+					}
+					?>" checked="checked"/>
+					<?php if($bottle['is_open'] == 0){
+						echo 'open';
+					} else if ($bottle['is_open'] == 1){
+						echo 'closed';
+					}?>
+					<input type="radio" id="is_open" name="is_open" value="<?php 
+					if($bottle['is_open'] == 0){
+						echo 'open';
+					} else if ($bottle['is_open'] == 1){
+						echo 'closed';
+					}?>"/> 
 				</li>
 				<li>
 					wine_id: <input id="wine_id" name="wine_id" value="<?php echo $bottle['wine_id']; ?>"/> 

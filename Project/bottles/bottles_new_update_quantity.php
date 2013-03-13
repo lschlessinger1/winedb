@@ -1,10 +1,10 @@
 <?php
 include ('../../get_db.php');
 $locations = mysql_query('SELECT * FROM locations ORDER BY room') or die ("Could not perform query... ".mysql_error());
-print('	<div id="content" class="ui-widget-content ui-corner-all">
+print('	<div id="content" class="ui-widget">
 		<fieldset id="newBottleFieldset">			
 		<legend>Bottle Input</legend>
-			<form id="newBottleForm" method="POST" action="bottles_update_quantity.php" > 
+			<form id="newBottleForm" method="POST" action="bottles_update_quantity.php?page=home" > 
 				
 				<p class="newWineInputPar"><label for="get_name">Wine: </label><input id="wineId" type="text" class="newWineInput" name="get_name"/></p> <!--this name should point to a id of the wines table and therefore obtaining wine_id of bottles table-->
 				

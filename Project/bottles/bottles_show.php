@@ -2,12 +2,13 @@
 <?php
 include ('../../get_db.php');
 $bot = mysql_query('SELECT * FROM bottles WHERE id = '.$_GET['id']) or die("Could not perform query... ".mysql_error());
-$wines = mysql_query('SELECT * FROM wines') or die("Could not perform query... ".mysql_error());
-$locations = mysql_query('SELECT * FROM locations ORDER BY room') or die("Could not perform query... ".mysql_error());
-$bottles = mysql_query('SELECT bottles.id, bottles.is_open, bottles.wine_id, bottles.location_id, wines.name, wines.vintage, wines.region, wines.country, wines.wine_maker_or_vineyard, wines.supplier, wines.price, wines.lower_life_expectancy, wines.upper_life_expectancy, wines.color, wines.grape_type, wines.percent_alcohol, wines.notes
+$bottles = mysql_query('SELECT bottles.id, bottles.is_open, bottles.wine_id, bottles.location_id, wines.name, wines.vintage, wines.region, wines.country, wines.wine_maker_or_vineyard, wines.supplier, wines.price, wines.lower_life_expectancy, wines.upper_life_expectancy, wines.color, wines.grape_type, wines.percent_alcohol, wines.notes, locations.room, locations.container_number
 FROM bottles
 LEFT JOIN wines
-ON bottles.wine_id=wines.id ORDER BY wines.name') or die("Could not perform query... ".mysql_error());
+ON bottles.wine_id=wines.id 
+LEFT JOIN locations 
+ON bottles.location_id=locations.id ORDER BY wines.name 
+') or die("Could not perform query... ".mysql_error());
 ?>
 <html>
 	<head>

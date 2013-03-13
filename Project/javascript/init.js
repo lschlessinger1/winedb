@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 	$('#header').fadeIn('fast');
 	var currentTime = new Date()
@@ -223,7 +222,7 @@ $(document).ready(function() {
 			  break;
 		}*/
 	});
-	/*$(function() {
+	$(function() {
 		$('#wineId').autocomplete({			
 			source: "autocomplete.php",
 			minLength: 2
@@ -232,7 +231,7 @@ $(document).ready(function() {
 			console.log("the input has been clicked.");
 			console.log($(this).val());
 		});
-	});*/
+	});
 	$(':text').focusin(function() {
 		$(this).css('background-color', '#EDEDED');
 	});

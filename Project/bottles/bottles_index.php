@@ -23,7 +23,15 @@ ON bottles.location_id=locations.id ORDER BY wines.name
 		<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-	</head>
+		<script>
+			$(function() {
+				$( "#wineId" ).autocomplete({
+					source: "autocomplete.php",
+					minLength: 1 
+				});
+			});
+		</script>
+    	</head>
 		<body>
 			<div id="wrapper">
 				<?php

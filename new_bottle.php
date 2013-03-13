@@ -8,7 +8,7 @@ print('	<div id="content" class="ui-widget-content ui-corner-all">
 				
 				<p class="newWineInputPar"><label for="vintage">Vintage: </label><input id="wineVintage" type="text" class="newWineInput"name="new_vintage"/></p>
 				
-				<p class="newWineInputPar"><label for="region">Region: </label><input id="wineRegion" type="text" class="newWineInput" name="new_region"/></p> 
+				<p class="newWineInputPar"><of s for="region">Region: </label><input id="wineRegion" type="text" class="newWineInput" name="new_region"/></p> 
 				
 				<p class="newWineInputPar"><label for="country">Country: </label><input id="wineCountry" type="text" class="newWineInput" name="new_country"/></p> 
 				
@@ -43,7 +43,7 @@ print('	<div id="content" class="ui-widget-content ui-corner-all">
 					<option>closed</option>
 					<option>open</option>
 				</select></p>
-				<p class="newWineInputPar"><label for="quantity">Quantity: </label><input id="wineQuantity" type="text" class="newWineInput"/></p>
+				<p class="newWineInputPar"><label for="quantity">Quantity: </label><input id="wineQuantity" type="text" class="newWineInput" name="new_quantity"/></p>
 				<p id="wineSubmit"><input id="submit" value="Create" type="submit"/></p>
 			</form>
 		</fieldset>
