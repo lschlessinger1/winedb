@@ -227,7 +227,7 @@ $(document).ready(function() {
 			source: "autocomplete.php",
 			minLength: 2
 		}); //autocompletion
-		$('#wineId').click(function() {
+		$('wineId').click(function() {
 			console.log("the input has been clicked.");
 			console.log($(this).val());
 		});

@@ -132,6 +132,9 @@ td.hovered {
 li.headlink ul { 
 	display: none; 
 }
+li.headlink ul  { 
+	display: none; 
+}
 li.headlink:hover ul { 
 	display: block; 
 }
@@ -147,7 +150,7 @@ li.headlink:hover ul {
 	float: left; 
 	margin-left: -1px; 
 	border: 1px black solid; 
-	background-color: #e9e9e9; 
+	background-color: white; 
 	text-align: center; 
 	font-size:1em;
 }
@@ -170,5 +173,8 @@ li.headlink:hover ul {
 	height: 50px;
 }
 #cssdropdown li.headlink ul li a:hover { 
+	background-color: #999; 
+}
+#cssdropdown li.headlink ul li.subHeadLink a:hover { 
 	background-color: #000; 
 }

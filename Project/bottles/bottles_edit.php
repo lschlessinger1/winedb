@@ -1,16 +1,19 @@
 <?php
 include ('../../get_db.php');
 	$bottle = mysql_fetch_array(mysql_query('SELECT * FROM bottles WHERE id = '.$_GET['id']));
+	$locations = mysql_query('SELECT * FROM locations ORDER BY room') or die("Could not perform query... ".mysql_error());
 ?>
 <html>
 	<head>
 		<title>Edit Bottle</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 	</head>
 	<body>
 		
 		<?php  
 echo 	'<style type="text/css">	
-			form#location_form ul li { list-style-type: none; margin: 10px; }
+			form#bottle_form ul li { list-style-type: none; margin: 10px; }
 			div#container { padding: 40px; }
 			div.header_sub { width: 100%; }
 			div#bottom_half { background-color: #00BFFF; padding: 1px 0px 1px 0px; }
@@ -30,7 +33,7 @@ echo 	'<style type="text/css">
 			}
 		</style>
 		
-		<script type="text/javascript" src="../jquery/js/jquery-1.7.2.min.js"></script>
+		
 		
 		<div id="header">
 			<div class="header_sub" id="bottom_half">
@@ -74,6 +77,21 @@ echo 	'<style type="text/css">
 				</li>
 				<li>
 					wine_id: <input id="wine_id" name="wine_id" value="<?php echo $bottle['wine_id']; ?>"/> 
+				</li>
+				<li>
+					<p class="newWineInputPar"><label for="location">Location: </label>
+				
+				<select id="wineLocation" type="text" name="new_location_id"> 
+				<?php
+				while($row = mysql_fetch_array($locations)){
+					if($row['id'] == $bottle['location_id']){
+						print("<option value=".$row["id"]." selected>".$row[room]." ".$row["container_number"]."</option>");
+					} else {
+						print("<option value=".$row["id"].">".$row[room]." ".$row["container_number"]."</option>");
+					}
+				}
+				?>
+				</select></p>
 				</li>
 				<li>
 					location_id: <input id="location_id" name="location_id" value="<?php echo $bottle['location_id']; ?>"/>

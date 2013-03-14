@@ -14,9 +14,9 @@ print('<div id="header">
 					<a href="#" class="navBarButton">Bottles</a> 	<!-- table of all wines, with crud functions-->
 						<ul class="subnav">
 							<li><a href="bottles/bottles_index.php?page=home">Bottles Index</a></li>
-							<li class="headlink">
+							<li class="subHeadLink">
 								<li><a href="#">Create New Bottle</a>
-									<ul class="subnav">
+									<ul class="subnav" id="hide">
 										<li><a href="bottles/bottles_index.php?page=updateQuantity">Update Quantity of Existing Wine</a></li>
 										<li><a href="bottles/bottles_index.php?page=newWine">Create New Bottles of New Wine</a></li>
 									</ul>

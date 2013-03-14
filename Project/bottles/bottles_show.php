@@ -51,77 +51,76 @@ ON bottles.location_id=locations.id ORDER BY wines.name
 					print ("</thead>");
 					print ("<tbody>");
 					while ($row = mysql_fetch_array($bottles)) {
-						print ("<tr>");
-						print ("<td>");
-						print ("<a href='bottles_show.php?id=".$row['id']."' class='showNameAnchor'>");
-						print ($row['name']);
-						print ("</a>");
-						print ("</td>");
-						print ("<td >");
-						print ($row['vintage']);
-						print ("</td>");
-						print ("<td >");
-						print ($row['region']);
-						print ("</td>");
-						print ("<td >");
-						print ($row['country']);
-						print ("</td>");
-						print ("<td >");
-						print ("<a href='https://www.google.com/search?q=".$row['wine_maker_or_vineyard']."'>");
-						print ($row['wine_maker_or_vineyard']);
-						print ("</a>");
-						print ("</td>");
-						print ("<td >");
-						print ($row['supplier']);
-						print ("</td>");
-						print ("<td >");
-						print ("$");
-						print ($row['price']);
-						print ("</td>");
-						print ("<td >");
-						print ($row['upper_life_expectancy']);
-						print ("</td>");
-						print ("<td >");
-						print ($row['lower_life_expectancy']);
-						print ("</td>");
-						print ("<td >");
-						print ($row['color']);
-						print ("</td>");
-						print ("<td >");
-						print ($row['grape_type']);
-						print ("</td>");
-						print ("<td >");
-						print ($row['percent_alcohol']);
-						print ("%");
-						print ("</td>");
-						print ("<td >");
-						 if($row['is_open'] == 0){
-							print("Closed");
-						 } else {
-							print("Open!");
-						 }
-						print ("</td>");
-						print ("<td >");
-						
-						print ($row['location_id']);
-						print ("</td>");
-						print ("<td >");
-						print ($row['notes']);
-						print ("</td>");
-						print ("<td >");
-						//print ('quantity');//= how many bottles with this wine_id
-						print ("</td>");
-						print ("<td>");
-						print ("<a href='bottles_edit.php?id=".$row['id']."' class='editButton'>");
-						print ("EDIT");
-						print ("</a>");
-						print ("</td>");
-						print ("<td>");
-						print ("<a href='bottles_delete.php?id=".$row['id']."' class='deleteButton'>");
-						print ("DELETE");
-						print ("</a>");
-						print ("</td>");
-						print ("</tr>");
+						if($row['id'] == $_GET['id']){//VERY ineffiecient!!! find better way to do this
+							print ("<tr>");
+							print ("<td>");
+							print ("<a href='bottles_show.php?id=".$row['id']."' class='showNameAnchor'>");
+							print ($row['name']);
+							print ("</a>");
+							print ("</td>");
+							print ("<td >");
+							print ($row['vintage']);
+							print ("</td>");
+							print ("<td >");
+							print ($row['region']);
+							print ("</td>");
+							print ("<td >");
+							print ($row['country']);
+							print ("</td>");
+							print ("<td >");
+							print ("<a href='https://www.google.com/search?q=".$row['wine_maker_or_vineyard']."'>");
+							print ($row['wine_maker_or_vineyard']);
+							print ("</a>");
+							print ("</td>");
+							print ("<td >");
+							print ($row['supplier']);
+							print ("</td>");
+							print ("<td >");
+							print ("$");
+							print ($row['price']);
+							print ("</td>");
+							print ("<td >");
+							print ($row['upper_life_expectancy']);
+							print ("</td>");
+							print ("<td >");
+							print ($row['lower_life_expectancy']);
+							print ("</td>");
+							print ("<td >");
+							print ($row['color']);
+							print ("</td>");
+							print ("<td >");
+							print ($row['grape_type']);
+							print ("</td>");
+							print ("<td >");
+							print ($row['percent_alcohol']);
+							print ("%");
+							print ("</td>");
+							print ("<td >");
+							 if($row['is_open'] == 0){
+								print("Closed");
+							 } else {
+								print("Open!");
+							 }
+							print ("</td>");
+							print ("<td >");
+							
+							print ($row['location_id']);
+							print ("</td>");
+							print ("<td >");
+							print ($row['notes']);
+							print ("</td>");
+							print ("<td>");
+							print ("<a href='bottles_edit.php?id=".$row['id']."' class='editButton'>");
+							print ("EDIT");
+							print ("</a>");
+							print ("</td>");
+							print ("<td>");
+							print ("<a href='bottles_delete.php?id=".$row['id']."' class='deleteButton'>");
+							print ("DELETE");
+							print ("</a>");
+							print ("</td>");
+							print ("</tr>");
+							}
 						}
 						print ("</tbody>");
 						print ("</table>"); 
