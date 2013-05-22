@@ -15,9 +15,7 @@ $(document).ready(function() {
 			$(this).attr('value', search_default);
 		}
 	});
-		$('li.headlink').hover(
-	function() { $('ul', this).css('display', 'block'); },
-	function() { $('ul', this).css('display', 'none'); });
+	
 	var name_default = "enter a name...";
 	var vintage_default = "enter a vintage...";
 	var region_default = "enter a region...";

@@ -75,6 +75,7 @@ echo 	'<style type="text/css">
 						echo 'closed';
 					}?>"/> 
 				</li>
+				
 				<li>
 					wine_id: <input id="wine_id" name="wine_id" value="<?php echo $bottle['wine_id']; ?>"/> 
 				</li>

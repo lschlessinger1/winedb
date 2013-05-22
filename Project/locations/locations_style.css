@@ -132,3 +132,20 @@ td.hovered {
 	font-family: Georgia, serif;
 	padding-left:5px;
 }
+a.locationAnchor:link    { 
+	color:red; 
+	text-decoration:none; 
+	padding-left: 25px;
+}
+a.locationAnchor:visited { 
+	color:red; 
+	text-decoration:none; 
+}
+a.locationAnchor:hover   { 
+	color:green; 
+	text-decoration:underline; 
+}
+a.locationAnchor:active  { 
+	color:red;
+	text-decoration:none; 
+}

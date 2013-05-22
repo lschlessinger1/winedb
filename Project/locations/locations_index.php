@@ -17,8 +17,7 @@ $result = mysql_query('SELECT * FROM locations') or die("Could not perform query
 		<body>
 			<?php include('../../locations_header.php'); ?>
 			<div id="content">
-				<h3>Create New Location</h3>
-			<?php include('../../new_location.php'); ?>
+				<h4><a href="locations_new.php" class="locationAnchor">Create New Location</a></h4>
 			<?php
 	print ("<table cellpadding='1' cellspacing='1' id='resultTable'>");
 	print ("<thead>");

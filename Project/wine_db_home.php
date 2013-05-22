@@ -18,7 +18,7 @@ $locations = mysql_query('SELECT * FROM locations') or die("Could not perform qu
 				<?php include('../home_header.php'); ?>
 				<br style="clear:both;"/>
 				<div id="content">
-				<center><?php include ('../search_form.php'); ?></center>
+					<center><?php include ('../search_form.php'); ?></center>
 				</div>
 				<?php include('../footer.php'); ?>
 			</div>

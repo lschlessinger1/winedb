@@ -6,9 +6,13 @@ print('	<div id="header">
 				<a href="../wines/wines_index.php" class ="navBarButton">Wines</a> 
 				<a href="../bottles/bottles_index.php?page=home" class ="navBarButton">Bottles</a>
 				<a href="#" class ="navBarButton">Buy more stickers</a>
-				<a href="#" class ="navBarButton">Heatmap of wine locations</a>
-				<label for="search">Search</label>
-				<input id="wineName" type="wineSearch"></input><!--make this a drop down menu to say search by "_____" and then an input type text -->
-			</div>
+				<a href="#" class ="navBarButton">Heatmap of wine locations</a>');
+				print('<br style="clear:both;"/>
+				<div id="content">
+				<center>'); 
+				include ('search/locations_search_form.php');
+				print('</center>
+				</div>');
+	print('</div>
 		</div>');
 ?>

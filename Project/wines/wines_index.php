@@ -46,7 +46,6 @@ function calcQuantity($wine_id) {
 				  <th>Supplier</th>
 				  <th>Price</th>
 				  <th>Lower Life Expectancy</th>
-				   - 
 				  <th>Upper Life Expectancy</th>
 				  <th>Color</th>
 				  <th>Grape Type</th>
